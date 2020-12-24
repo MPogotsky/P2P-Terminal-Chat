@@ -1,8 +1,7 @@
-//
-// Created by pogotsky on 24.12.2020.
-//
+
+#include "Server/Server.h"
 
 int main(){
-    //First try
+
 }
 
