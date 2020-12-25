@@ -1,7 +1,7 @@
-#include "Server/Server.h"
+
+#include "Client/Client.h"
 
 int main(){
-    Server server;
-    server.listenAndAccept();
+    Client client;
 }
 
