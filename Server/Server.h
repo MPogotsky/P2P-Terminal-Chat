@@ -11,7 +11,7 @@
 #include <sys/socket.h>
 #include <cstring>
 
-#define PORT 8080
+#define PORT 8823
 
 class Server {
 private:
@@ -22,7 +22,7 @@ private:
 
     struct sockaddr_in address;
 
-    void bindSocket();
+    int bindSocket();
 
 
 public:
@@ -32,6 +32,7 @@ public:
     Server()
     :addrLength(sizeof(address)){
         bindSocket();
+        listenAndAccept();
     }
 
     ~Server() {
@@ -39,6 +40,5 @@ public:
     };
 };
 
-#include "Server.cpp"
 
 #endif //P2P_TERMINAL_CHAT_SERVER_H

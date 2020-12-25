@@ -1,4 +1,6 @@
-void Server::bindSocket() {
+#include "Server.h"
+
+int Server::bindSocket() {
     server = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if(server == -1){
         std::cerr << "Error while creating socket." << std::endl;
@@ -9,6 +11,7 @@ void Server::bindSocket() {
 
     if(bind(server, (struct sockaddr*)&address, addrLength) == -1){
         std::cerr << "Error while binding socket." << std::endl;
+        return 0;
         //Figure out how to print errors with errno lib
     }
 }
@@ -23,5 +26,5 @@ void Server::listenAndAccept() {
     }
     read(client, buffer, sizeof(buffer));
     std::cout << buffer << std::endl;
-
+    write(client, "Received", sizeof("Received"));
 }
