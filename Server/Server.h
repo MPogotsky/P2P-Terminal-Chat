@@ -11,7 +11,7 @@
 #include <sys/socket.h>
 #include <cstring>
 
-#define PORT 8823
+#define PORT 8080 //8823
 
 class Server {
 private:
